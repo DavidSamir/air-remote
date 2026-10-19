@@ -1,0 +1,15 @@
+{
+  "golden_gate": {
+    "url": "https://github.com/paceaitian/fitbit-air-notification-bridge.git",
+    "commit": "6fec57fafc68e03904f49d823248e38b07a54478",
+    "submodules": {
+      "external/lwip": "1bb6e7f52de1cd86be0eed31e348431edc2cd01e",
+      "external/mbedtls": "8b3f26a5ac38d4fdccbc5c5366229f3e01dafcc0"
+    }
+  },
+  "gradle_wrapper": {
+    "version": "6.9.1",
+    "jar_sha256": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+    "distribution_sha256": "8c12154228a502b784f451179846e518733cf856efc7d45b2e6691012977b2fe"
+  }
+}

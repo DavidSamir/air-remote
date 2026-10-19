@@ -1,0 +1,34 @@
+// SPDX-License-Identifier: Apache-2.0
+// The transport requires this pinned, legacy-compatible Android build toolchain.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31'
+        classpath 'org.codehaus.groovy:groovy-all:2.5.6'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+subprojects {
+    // Configure the extension before upstream scripts inspect android.ndkDirectory.
+    plugins.withId('com.android.library') {
+        android.ndkVersion = rootProject.property('NDK_VERSION')
+    }
+}
+
+// Required by the upstream Android library modules; no publishing tasks are used.
+ext.publishVariant = 'library'
+ext.buildNumber = 1
+ext.libraryVersionName = '0.1.1'

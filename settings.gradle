@@ -1,0 +1,11 @@
+rootProject.name = 'AirRemote'
+include ':app'
+
+def transport = file('.deps/golden-gate/platform/android/goldengate')
+if (!transport.exists()) {
+    throw new GradleException('Run python scripts/bootstrap.py before opening or building this project.')
+}
+['RxFitbitGatt', 'GoldenGateBindings', 'linkcontroller', 'GoldenGateConnectionManager'].each { name ->
+    include ":${name}"
+    project(":${name}").projectDir = new File(transport, name)
+}

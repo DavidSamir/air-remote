@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION.toInteger()
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        applicationId 'dev.airremote'
+        minSdkVersion MIN_SDK_VERSION.toInteger()
+        targetSdkVersion TARGET_SDK_VERSION.toInteger()
+        versionCode 1
+        versionName '0.1.0'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions { jvmTarget = '1.8' }
+    sourceSets { main.java.srcDirs += 'src/main/kotlin' }
+    testOptions { unitTests.returnDefaultValues = true }
+}
+
+dependencies {
+    implementation project(':RxFitbitGatt')
+    implementation project(':GoldenGateBindings')
+    implementation project(':linkcontroller')
+    implementation project(':GoldenGateConnectionManager')
+    implementation "com.github.fitbit:bitgatt:$BITGATT_COMMIT_VERSION"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
+    implementation 'androidx.core:core:1.3.2'
+    implementation "io.reactivex.rxjava2:rxjava:$RXJAVA_VERSION"
+    implementation "io.reactivex.rxjava2:rxandroid:$RXANDROID_VERSION"
+    implementation "com.jakewharton.timber:timber:$TIMBER_VERSION"
+    testImplementation "junit:junit:$JUNIT_VERSION"
+}

@@ -1,0 +1,22 @@
+Air Remote
+Copyright 2026 Air Remote contributors
+
+This project contains code derived from Fitbit Air Notification Bridge:
+https://github.com/paceaitian/fitbit-air-notification-bridge
+Pinned revision: 6fec57fafc68e03904f49d823248e38b07a54478
+Copyright 2026 Fitbit Air Notification Bridge contributors
+
+The transport derives from Golden Gate:
+https://github.com/Fitbit/golden-gate
+Copyright 2017-2020 Fitbit, Inc.
+
+Modified app code is identified in source-file headers. The original upstream
+notice is preserved in third_party/notices/golden-gate.txt. See THIRD_PARTY.md
+for the dependency boundary and additional notices.
+
+The unmodified BitGatt dependency is licensed separately under Mozilla Public
+License 2.0. Its license is preserved in third_party/notices/bitgatt.txt and
+its source is available at https://github.com/Google-Health-API/bitgatt/tree/v0.9.11.
+
+Fitbit, Fitbit Air, Google, and Google Health are trademarks of their respective
+owners. This is an independent, unofficial project.
